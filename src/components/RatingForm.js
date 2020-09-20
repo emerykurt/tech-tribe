@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchContainer from './SearchContainer';
+import SearchContainer from '../containers/SearchContainer';
 
 class RatingForm extends React.Component{
     state = {
@@ -16,7 +16,7 @@ class RatingForm extends React.Component{
         return(
             <form name="compR">
                 <SearchContainer compIdEvent={this.compIdEvent}/>
-                <label>Interview Process:</label>
+                <img src="" alt="Trulli" width="500" height="333"></img>
                 <select name="rInt" id="rInt" form="compR">
                     <option value=" "> </option>
                     <option value="easy">easy</option>

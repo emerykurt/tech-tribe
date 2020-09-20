@@ -1,6 +1,7 @@
 import React from 'react'
-import Rating from './Rating'
-import RatingForm from './RatingForm'
+import {connect} from 'react-redux'
+import Rating from '../components/Rating'
+import RatingForm from '../components/RatingForm'
 
 class RatingsContainer extends React.Component {
     state = {ratings: []}
@@ -39,6 +40,7 @@ class RatingsContainer extends React.Component {
                 rState = {rating.attributes.state}
                 rCompId = {rating.attributes.company_id}
                 rComp = {rating.attributes.company.data.attributes.name}
+                rLogo = {rating.attributes.company.data.attributes.logo}
                 /> )
         }))
     }
@@ -46,12 +48,15 @@ class RatingsContainer extends React.Component {
     render(){
         return(
             <div>
-                <RatingForm />
+                {/* <RatingForm /> */}
                 <h1>All the Ratings!</h1>
                 {this.renderRating()}
             </div>)
 
     }
 }
+const mapStateToProps = state => {
+    console.log(state)
+}
 
-export default RatingsContainer
+export default connect(mapStateToProps)(RatingsContainer)

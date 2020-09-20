@@ -4,7 +4,8 @@ import React from 'react'
 function Rating(props){
     return(
         <article>
-                <h3>{props.rComp}</h3>
+                <img src={props.rLogo} alt="logo" width="75" height="75"/>
+                <h5>{props.rComp}</h5>
                     <details>
                         <summary>Interview Process: {props.rInt}</summary>
                         <p>{props.rIntCom}</p>

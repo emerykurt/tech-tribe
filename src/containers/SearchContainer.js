@@ -43,10 +43,6 @@ class SearchContainer extends React.Component{
         return(
             <div>
                 <input type="search" placeholder="Company.." id="rCompId" name="rCompId" onChange={this.handleInputChange}/><br/>
-                <select onChange={this.props.compIdEvent}>
-                    <option value=" ">select company</option>
-                    {this.renderSearchResults()}
-                    </select>
             </div>
         )
     }
