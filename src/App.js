@@ -8,11 +8,10 @@ import './App.css';
 class App extends Component {
   render (){
     return (
-      <div className="App">
-        <Companies/>
+      <div id="main-container">
         <Router>
           <Switch>
-            <Route exact path='/companies' component={Companies}/>
+            <Route exact path='/' component={Companies}/>
             {/* <Route exact path='/ratings' component={RatingsContainer}/> */}
           </Switch>
         </Router>

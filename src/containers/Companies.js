@@ -37,8 +37,7 @@ class Companies extends React.Component {
     }
 }
 const mapStateToProps = state => {
-    debugger
-    return{ companies: state.companies}
+    return{ company: state.company}
 }
 
 export default connect(mapStateToProps, {fetchCompanies})(Companies)
