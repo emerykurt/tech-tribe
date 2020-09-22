@@ -40,9 +40,10 @@ export class InterviewForm extends Component {
         return (
             <ThemeProvider theme={theme}>
                 <React.Fragment>
+                <br/><br/><br/><br/><br/>
                     <Nav interview={this.interview} work={this.work} user={this.user} review={this.review}/>
                     <Paper variant="outlined" square elevation={3} >
-                    <br/><br/><br/><br/><br/>
+                    <br/><br/><br/>
                         <Typography variant="h3" >
                         Interview Process
                         </Typography>

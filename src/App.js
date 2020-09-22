@@ -1,23 +1,25 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Nav from './components/Nav'
 import Companies from './containers/CompaniesContainer'
-// import Company from './components/Company'
-// import RatingsContainer from './containers/RatingsContainer'
-import './App.css';
-import Form from './components/ratingForms/RatingForm'
+import RatingsContainer from './containers/RatingsContainer'
+import Form from './components/ratingFolder/RatingForm'
+import './App.css'
 
 class App extends Component {
+
   render (){
     return (
-      <div id="main-container">
         <Router>
+          <div>
+          <Nav/>
           <Switch>
-            {/* <Route exact path='/' component={Companies}/> */}
-            <Route exact path='/' component={Form}/>
-            {/* <Route exact path='/ratings' component={RatingsContainer}/> */}
+            <Route exact path='/' component={Companies}/>
+            <Route path='/form' component={Form} />
+            <Route path='/reviews' component={RatingsContainer}/>
           </Switch>
+          </div>
         </Router>
-      </div>
     );
   }
 }

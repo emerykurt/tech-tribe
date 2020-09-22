@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Rating from '../components/Rating'
-import RatingForm from '../components/RatingForm'
+import RatingForm from '../components/ratingFolder/RatingForm'
 
 class RatingsContainer extends React.Component {
     state = {ratings: []}
@@ -49,6 +49,7 @@ class RatingsContainer extends React.Component {
         return(
             <div>
                 {/* <RatingForm /> */}
+                <br/><br/><br/><br/><br/>
                 <h1>All the Ratings!</h1>
                 {this.renderRating()}
             </div>)

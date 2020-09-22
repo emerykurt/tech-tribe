@@ -9,6 +9,7 @@ import Success from './Success'
 export class RatingForm extends React.Component {
     state = {
         step: 1,
+        rCompName: '',
         rTitle: '',
         rInt: '',
         rIntCom: '',
@@ -31,6 +32,12 @@ export class RatingForm extends React.Component {
         
     }
 
+    nextStep = () => {
+        const { rCompName } = this.state;
+        this.setState({
+            rCompName: rCompName= this.props.rCompName
+        })
+    }
     //Proceed to next step
     nextStep = () => {
         const { step } = this.state;

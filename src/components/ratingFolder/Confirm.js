@@ -36,7 +36,8 @@ export class Confirm extends Component {
         return (
             <ThemeProvider theme={theme}>
                 <React.Fragment>
-                <Nav interview={this.interview} work={this.work} user={this.user} review={this.review}/><br/><br/><br/><br/><br/>
+                <br/><br/><br/><br/><br/>
+                <Nav interview={this.interview} work={this.work} user={this.user} review={this.review}/><br/><br/><br/>
                     <Typography variant="h3" >
                     Review:
                     </Typography>
