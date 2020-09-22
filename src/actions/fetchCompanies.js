@@ -1,11 +1,12 @@
 export const fetchCompanies = () => {
     return(dispatch) => {
-        debugger
         return fetch('http://localhost:3000/companies')
         .then(res => res.json())
         .then( (json) => {
-            dispatch({type:"SET_COMPS", payload: json})
+            // debugger
+            dispatch({type:"SET_COMPS", payload: json.data})
         })
+
     }
 }
 

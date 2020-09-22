@@ -15,8 +15,7 @@ class RatingForm extends React.Component{
     render(){
         return(
             <form name="compR">
-                <SearchContainer compIdEvent={this.compIdEvent}/>
-                <img src="" alt="Trulli" width="500" height="333"></img>
+                <SearchContainer compIdEvent={this.compIdEventprops}/>
                 <select name="rInt" id="rInt" form="compR">
                     <option value=" "> </option>
                     <option value="easy">easy</option>

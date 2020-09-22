@@ -1,24 +1,11 @@
 import React from 'react';
-
+import CompaniesContainer from './CompaniesContainer';
 
 class SearchContainer extends React.Component{
 
-    state = {
-        companies: [],
-        search: ""
-    }
-
-    componentDidMount(){
-        fetch("http://localhost:3000/companies")
-        .then(res => res.json())
-        .then( (json) => {
-            this.setState({
-                companies: json.data 
-            })
-        })
-    }
-
-    renderSearchResults(){
+    renderSearchResults(e){
+        debugger
+        let search = e.target.value
         let compDisplay = this.state.companies
         if(this.state.search){
             compDisplay = this.state.companies.filter((company) => 
@@ -33,20 +20,15 @@ class SearchContainer extends React.Component{
         }))
     }
 
-    handleInputChange = (e) => {
-        this.setState({
-            search: e.target.value
-        }) 
-    }
-
     render (){
         return(
             <div>
-                <input type="search" placeholder="Company.." id="rCompId" name="rCompId" onChange={this.handleInputChange}/><br/>
+                <input type="search" placeholder="Company.." id="rCompId" name="rCompId" onChange={this.renderSearchResults} /><br/>
             </div>
         )
     }
 
 
 }
+
 export default SearchContainer
