@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {connect} from 'react-redux'
 
 function Rating(props){
     return(
@@ -29,4 +29,4 @@ function Rating(props){
         </article>
     )
 }
-export default Rating
+export default connect(null)(Rating)

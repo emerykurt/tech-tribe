@@ -3,7 +3,7 @@ export const fetchRatings = () => {
       return fetch('http://localhost:3000/ratings')
       .then(resp => resp.json())
       .then(ratings => {
-        dispatch({ type: "SET_RATINGS", payload: ratings })
+        dispatch({ type: "SET_RATINGS", payload: ratings.data })
       })
     }
   }

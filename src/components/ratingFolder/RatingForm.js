@@ -7,9 +7,10 @@ import Success from './Success'
 
 
 export class RatingForm extends React.Component {
+    
     state = {
         step: 1,
-        rCompName: '',
+        rCompName: this.props.location.rCompName,
         rTitle: '',
         rInt: '',
         rIntCom: '',
@@ -28,14 +29,21 @@ export class RatingForm extends React.Component {
         rBootcamp: '',
         rCity: '',
         rState: '',
-        rCompId: '',
+        rCompId: this.props.location.rCompId,
         
     }
 
-    nextStep = () => {
-        const { rCompName } = this.state;
+    setName(){
+        let { rCompName } = this.state;
         this.setState({
-            rCompName: rCompName= this.props.rCompName
+            rCompName: rCompName= this.props.location.rCompName
+        })
+    }
+
+    setId(){
+        let { rCompId } = this.state;
+        this.setState({
+            rCompId: rCompId= this.props.location.rCompId
         })
     }
     //Proceed to next step
@@ -101,9 +109,10 @@ export class RatingForm extends React.Component {
     }
 
     render() {
+        // debugger
         const {step} = this.state
-        const {rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState, rCompId} = this.state
-        const values = {rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState, rCompId}
+        const {rCompName, rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState, rCompId} = this.state
+        const values = {rCompName, rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState, rCompId}
         
         switch(step){
             case 1:

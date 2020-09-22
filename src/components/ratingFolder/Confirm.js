@@ -32,7 +32,7 @@ export class Confirm extends Component {
     }
 
     render() {
-        const {values: {rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState}} = this.props
+        const {values: {rCompName, rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState}} = this.props
         return (
             <ThemeProvider theme={theme}>
                 <React.Fragment>
@@ -42,6 +42,10 @@ export class Confirm extends Component {
                     Review:
                     </Typography>
                     <List>
+                        <ListSubheader>Company Name:</ListSubheader>
+                        <ListItem>
+                        <ListItemText primary={rCompName}/>
+                        </ListItem>
                         <ListSubheader>Job Title:</ListSubheader>
                         <ListItem>
                         <ListItemText primary={rTitle}/>

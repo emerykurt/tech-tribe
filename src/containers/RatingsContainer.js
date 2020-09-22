@@ -1,26 +1,21 @@
 import React from 'react'
-import {connect} from 'react-redux'
 import Rating from '../components/Rating'
-import RatingForm from '../components/ratingFolder/RatingForm'
+import {connect} from 'react-redux'
+import {fetchRatings} from '../actions/fetchRatings'
+
 
 class RatingsContainer extends React.Component {
-    state = {ratings: []}
 
     componentDidMount(){
-        fetch("http://localhost:3000/ratings")
-        .then(res => res.json())
-        .then( (json) => {
-            this.setState({
-                ratings: json.data 
-            })
-        })
+        this.props.fetchRatings()
     }
 
     renderRating(){
-        console.log(this.state)
-        return(this.state.ratings.map(rating => {
+        console.log(this.props)
+        return(this.props.ratings.map(rating => {
+            // debugger
             return(
-                <Rating
+                <Rating key={rating.id}
                 rInt = {rating.attributes.interview} 
                 rIntCom = {rating.attributes.interview_comment} 
                 rTech = {rating.attributes.tech}
@@ -57,7 +52,7 @@ class RatingsContainer extends React.Component {
     }
 }
 const mapStateToProps = state => {
-    console.log(state)
+    return{ ratings: state.ratings}
 }
 
-export default connect(mapStateToProps)(RatingsContainer)
+export default connect(mapStateToProps, {fetchRatings})(RatingsContainer)

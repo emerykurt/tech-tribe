@@ -25,7 +25,6 @@ export default class Nav extends Component {
                     </AccordionSummary>
                     <MenuList >
                         <MenuItem ><NavLink to='/'>Home</NavLink></MenuItem>
-                        <MenuItem ><NavLink to='/form'>Write a Review</NavLink></MenuItem>
                         <MenuItem ><NavLink to='/reviews'>View Reviews</NavLink></MenuItem>
                     </MenuList>
                 </Accordion>
