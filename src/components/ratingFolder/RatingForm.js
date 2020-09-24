@@ -3,7 +3,6 @@ import Interview from './InterviewForm'
 import Work from './WorkLifeform'
 import User from './UserForm'
 import Confirm from './Confirm'
-import Success from './Success'
 
 
 export class RatingForm extends React.Component {
@@ -29,7 +28,8 @@ export class RatingForm extends React.Component {
         rBootcamp: '',
         rCity: '',
         rState: '',
-        rCompId: this.props.location.rCompId,
+        rLinked: '',
+        company_id: this.props.location.rCompId,
         
     }
 
@@ -111,8 +111,9 @@ export class RatingForm extends React.Component {
     render() {
         // debugger
         const {step} = this.state
-        const {rCompName, rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState, rCompId} = this.state
-        const values = {rCompName, rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState, rCompId}
+        const {rCompName, rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState, rLinked, company_id} = this.state
+        const values = {rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState, rLinked, company_id}
+        const name = {rCompName}
         
         switch(step){
             case 1:
@@ -160,13 +161,8 @@ export class RatingForm extends React.Component {
                         interview={this.interview}
                         work={this.work}
                         user={this.user}
-                        values={values}/>
-                )
-            case 5:
-                return(
-                    <Success
-                        handlechange={this.handlechange}
-                        values={values}/>
+                        values={values}
+                        name={name}/>
                 )
             default:
         }

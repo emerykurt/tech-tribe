@@ -3,12 +3,15 @@ export default (state = [], action) => {
     switch(action.type){
         case "SET_RATINGS":
             return [...action.payload];
-        case "SEARCH":{
+        case "ADD_RATING":
             debugger
-            let compDisplay = state.companies.filter((company) => 
-            company.attributes.name.toLowerCase().includes(this.state.search.toLowerCase()))
-            return {...state, search: compDisplay}
-        } 
+            return [...state, action.payload];
+        // case "SEARCH":{
+        //     debugger
+        //     let compDisplay = state.companies.filter((company) => 
+        //     company.attributes.name.toLowerCase().includes(this.state.search.toLowerCase()))
+        //     return {...state, search: compDisplay}
+        // } 
         default:
             return state;
     }

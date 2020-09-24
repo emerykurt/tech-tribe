@@ -60,6 +60,12 @@ export class UserForm extends Component {
                         variant="outlined" 
                         onChange={handlechange('rLName')} 
                         value={values.rLName}/><br/><br/><br/>
+                        <InputLabel>LinkedIn Url:</InputLabel><br/>
+                        <TextField id="rLinked" 
+                        label="...linkedIn url" 
+                        variant="outlined" 
+                        onChange={handlechange('rLinked')} 
+                        value={values.rLinked}/><br/><br/><br/>
                         <InputLabel>Bootcamp:</InputLabel><br/>
                         <TextField id="rBootcamp" 
                         label="...bootcamp" 

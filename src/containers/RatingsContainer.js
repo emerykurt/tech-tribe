@@ -1,7 +1,7 @@
 import React from 'react'
 import Rating from '../components/Rating'
 import {connect} from 'react-redux'
-import {fetchRatings} from '../actions/fetchRatings'
+import {fetchRatings} from '../actions/RatingsAction'
 
 
 class RatingsContainer extends React.Component {
@@ -11,28 +11,29 @@ class RatingsContainer extends React.Component {
     }
 
     renderRating(){
-        console.log(this.props)
         return(this.props.ratings.map(rating => {
             // debugger
             return(
                 <Rating key={rating.id}
-                rInt = {rating.attributes.interview} 
-                rIntCom = {rating.attributes.interview_comment} 
-                rTech = {rating.attributes.tech}
-                rTechCom = {rating.attributes.tech_interview}
-                rLang = {rating.attributes.language}
-                rCompen = {rating.attributes.compensation}
-                rBenef = {rating.attributes.benefits}
-                rDivers = {rating.attributes.diversity}
-                rMentor = {rating.attributes.mentorship}
-                rCult = {rating.attributes.culture}
-                rCultCom = {rating.attributes.culture_comment}
-                rOv = {rating.attributes.overall}
-                rFName = {rating.attributes.first_name}
-                rLName = {rating.attributes.last_name}
-                rBootCamp = {rating.attributes.bootcamp}
-                rCity = {rating.attributes.city}
-                rState = {rating.attributes.state}
+                rTitle = {rating.attributes.rTitle}
+                rInt = {rating.attributes.rInt} 
+                rIntCom = {rating.attributes.rIntCom} 
+                rTech = {rating.attributes.rTech}
+                rTechCom = {rating.attributes.rTechCom}
+                rLang = {rating.attributes.rLang}
+                rCompen = {rating.attributes.rCompen}
+                rBenef = {rating.attributes.rBenef}
+                rDivers = {rating.attributes.rDivers}
+                rMentor = {rating.attributes.rMentor}
+                rCult = {rating.attributes.rCult}
+                rCultCom = {rating.attributes.rCutlCom}
+                rOv = {rating.attributes.rOv}
+                rFName = {rating.attributes.rFName}
+                rLName = {rating.attributes.rLName}
+                rLinked = {rating.attributes.rLinked}
+                rBootCamp = {rating.attributes.rBootcamp}
+                rCity = {rating.attributes.rCity}
+                rState = {rating.attributes.rState}
                 rCompId = {rating.attributes.company_id}
                 rComp = {rating.attributes.company.data.attributes.name}
                 rLogo = {rating.attributes.company.data.attributes.logo}

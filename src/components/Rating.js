@@ -5,7 +5,8 @@ function Rating(props){
     return(
         <article>
                 <img src={props.rLogo} alt="logo" width="75" height="75"/>
-                <h5>{props.rComp}</h5>
+                <h4>{props.rComp}</h4>
+                <h5>{props.rTitle}</h5>
                     <details>
                         <summary>Interview Process: {props.rInt}</summary>
                         <p>{props.rIntCom}</p>
@@ -24,7 +25,7 @@ function Rating(props){
                     </details>
                     <blockquote>
                     - {props.rFName} {props.rLName}, {props.rBootCamp}<br/>
-                    {props.rCity}, {props.rState}
+                    {props.rCity}, {props.rState} <br/><a href={props.rLinked}>Linked Profile</a>
                     </blockquote>
         </article>
     )

@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import {addRating} from '../../actions/RatingsAction'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import Nav from './NavBar'
 import List from '@material-ui/core/List'
 import ListSubheader from '@material-ui/core/ListSubheader'
@@ -8,11 +11,15 @@ import ThemeProvider from '@material-ui/styles/ThemeProvider'
 import createMuiTheme from '@material-ui/core/styles/createMuiStrictModeTheme'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
+import { render } from '@testing-library/react'
 
 
 const theme = createMuiTheme()
 
+
 export class Confirm extends Component {
+
+    
     continue = e => {
         e.preventDefault()
         this.props.nextStep()
@@ -32,7 +39,7 @@ export class Confirm extends Component {
     }
 
     render() {
-        const {values: {rCompName, rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState}} = this.props
+        const {values: {rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rLinked, rBootcamp, rCity, rState}, name:{rCompName}} = this.props
         return (
             <ThemeProvider theme={theme}>
                 <React.Fragment>
@@ -136,6 +143,12 @@ export class Confirm extends Component {
                         </ListItem>
                         <Button size="small" variant="outlined" color="primary" onClick={this.user}>Edit</Button>
                         <br/><br/>
+                        <ListSubheader>LinkedIn:</ListSubheader>
+                        <ListItem>
+                        <ListItemText primary={<a href={rLinked}>LinkedIn Profile</a>}/>
+                        </ListItem>
+                        <Button size="small" variant="outlined" color="primary" onClick={this.user}>Edit</Button>
+                        <br/><br/>
                         <ListSubheader>Bootcamp:</ListSubheader>
                         <ListItem>
                         <ListItemText primary={rBootcamp}/>
@@ -154,14 +167,20 @@ export class Confirm extends Component {
                         </ListItem>
                         <Button size="small" variant="outlined" color="primary" onClick={this.user}>Edit</Button><br/><br/>
                     </List>
+
+                    <Link to={{pathname:"/reviews"}}>
                     <Button 
                         variant="contained" 
                         color="secondary" 
-                        >Confirm</Button>
+                        onClick={() => {
+                            this.props.addRating(this.props.values) 
+                            }}>Confirm</Button>
+                    </Link><br/>
+                    
                 </React.Fragment>
             </ThemeProvider>
         )
     }
 }
 
-export default Confirm
+export default connect(null, {addRating})(Confirm)
