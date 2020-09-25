@@ -7,12 +7,12 @@ export default (state = [], action) => {
             return [...action.payload];
         case "ADD_COMPS":
                 return [...state, action.payload];
-        // case "SEARCH":{
-        //     debugger
-        //     let compDisplay = state.companies.filter((company) => 
-        //     company.attributes.name.toLowerCase().includes(this.state.search.toLowerCase()))
-        //     return {...state, search: compDisplay}
-        // } 
+        case "SEARCH":{
+            // debugger
+            const {value} = action
+            const companies = state.filter((company) => company.attributes.name.includes(value))
+            return {...companies}
+        } 
         default:
             return state;
     }

@@ -5,11 +5,24 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import {createStore, compose, applyMiddleware} from 'redux'
+import { reducer as searchReducer, reduxSearch } from 'redux-search'
 import rootReducer from './reducers'
 import thunk from 'redux-thunk'
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+const enhancer = compose(
+  applyMiddleware(thunk),
+  reduxSearch({
+    resourceIndexes: {
+      companies: ['name']
+    },
+    resourceSelector: ( state) => {
+      return state.companies
+    }
+  })
+)
+const store = createStore(
+  rootReducer, 
+  enhancer)
 
 ReactDOM.render(
   

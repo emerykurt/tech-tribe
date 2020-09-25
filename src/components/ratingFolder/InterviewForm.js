@@ -42,21 +42,24 @@ export class InterviewForm extends Component {
                 <React.Fragment>
                 <br/><br/><br/><br/><br/>
                     <Nav interview={this.interview} work={this.work} user={this.user} review={this.review}/>
-                    <Paper variant="outlined" square elevation={3} >
+                    <Paper variant="outlined" square elevation={3} 
+                     >
                     <br/><br/><br/>
-                        <Typography variant="h3" >
+                        <Typography  variant="h3">
                         Interview Process
                         </Typography>
                         <br/><br/><br/>
-                        <InputLabel>Job Title:</InputLabel>
+                        <InputLabel >Job Title:</InputLabel>
                         <TextField id="rTitle" 
+                        
                         label="details..." 
                         variant="outlined" 
                         onChange={handlechange('rTitle')}
                         value={values.rTitle}/>
                         <br/><br/><br/><br/>
-                        <InputLabel>Interview Difficulty:</InputLabel>
+                        <InputLabel >Interview Difficulty:</InputLabel>
                         <Select id="rInt" 
+                        
                         onChange={handlechange('rInt')}
                         value={values.rInt}>
                                 <MenuItem value="easy">easy</MenuItem>
@@ -65,13 +68,15 @@ export class InterviewForm extends Component {
 
                         </Select><br/><br/>
                         <TextField id="rIntCom" 
+                        
                         label="details..." 
                         variant="outlined" 
                         onChange={handlechange('rIntCom')}
                         value={values.rIntCom}/>
                         <br/><br/><br/><br/>
-                        <InputLabel>Tech Interview Difficulty:</InputLabel>
+                        <InputLabel >Tech Interview Difficulty:</InputLabel>
                         <Select id="rTech" 
+                        
                         onChange={handlechange('rTech')}
                         value={values.rTech}>
                                 <MenuItem value="easy">easy</MenuItem>

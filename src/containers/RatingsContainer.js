@@ -2,6 +2,8 @@ import React from 'react'
 import Rating from '../components/Rating'
 import {connect} from 'react-redux'
 import {fetchRatings} from '../actions/RatingsAction'
+import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography'
 
 
 class RatingsContainer extends React.Component {
@@ -11,9 +13,9 @@ class RatingsContainer extends React.Component {
     }
 
     renderRating(){
-        return(this.props.ratings.map(rating => {
-            // debugger
-            return(
+        return(
+            this.props.ratings.map(rating => {
+            return (
                 <Rating key={rating.id}
                 rTitle = {rating.attributes.rTitle}
                 rInt = {rating.attributes.rInt} 
@@ -26,7 +28,6 @@ class RatingsContainer extends React.Component {
                 rDivers = {rating.attributes.rDivers}
                 rMentor = {rating.attributes.rMentor}
                 rCult = {rating.attributes.rCult}
-                rCultCom = {rating.attributes.rCutlCom}
                 rOv = {rating.attributes.rOv}
                 rFName = {rating.attributes.rFName}
                 rLName = {rating.attributes.rLName}
@@ -37,19 +38,32 @@ class RatingsContainer extends React.Component {
                 rCompId = {rating.attributes.company_id}
                 rComp = {rating.attributes.company.data.attributes.name}
                 rLogo = {rating.attributes.company.data.attributes.logo}
-                /> )
-        }))
+                />) 
+            })
+        
+        )
     }
 
     render(){
         return(
             <div>
-                {/* <RatingForm /> */}
-                <br/><br/><br/><br/><br/>
-                <h1>All the Ratings!</h1>
-                {this.renderRating()}
-            </div>)
-
+            <br/><br/>
+            <Typography variant="h2"
+            align='center'>
+                TribalThoughts!
+            </Typography><br/>
+            <Grid
+            container
+            spacing={0}
+            // direction="column"
+            alignItems="center"
+            justify="center"
+            style={{ minHeight: '100vh' }}
+            >
+            {this.renderRating()}
+            </Grid>
+            </div>
+        )
     }
 }
 const mapStateToProps = state => {

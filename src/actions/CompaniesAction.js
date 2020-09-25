@@ -10,7 +10,6 @@ export const fetchCompanies = () => {
 }
 
 export const addCompany = company => {
-  // debugger
     return(dispatch) => {
       return fetch('http://localhost:3000/companies', {
         method: 'POST',
@@ -21,7 +20,6 @@ export const addCompany = company => {
       })
       .then(resp => resp.json())
       .then(company => {
-        // debugger
         if (typeof company.error == "undefined"){
           alert(`Thank you for adding ${company.data.attributes.name} to our site. Just to be sure, look for your company!`)
           dispatch({ type:"ADD_COMP", payload: company })
@@ -32,4 +30,9 @@ export const addCompany = company => {
       }
       )
     } 
+  }
+
+
+  export function search(value) {
+    return {type: "SEARCH", value}
   }

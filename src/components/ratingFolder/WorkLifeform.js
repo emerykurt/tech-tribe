@@ -6,7 +6,6 @@ import Input from '@material-ui/core/Input'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import InputLabel from '@material-ui/core/InputLabel'
 import Select from '@material-ui/core/Select'
-import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
@@ -105,12 +104,8 @@ export class WorkLifeform extends Component {
                                 <MenuItem value="micromanaged">micromanaged</MenuItem>
                                 <MenuItem value="difficult">difficult</MenuItem>
                                 <MenuItem value="hypercompetitive">hypercompetitive</MenuItem>
-                        </Select><br/><br/>
-                        <TextField id="rCultCom" 
-                        label="details..." 
-                        variant="outlined" 
-                        onChange={handlechange('rCultCom')} 
-                        value={values.rCultCom}/><br/><br/><br/><br/>
+                        </Select><br/><br/><br/><br/>
+
                         <InputLabel>Overall:</InputLabel>
                         <FormControl component="fieldset">
                         <RadioGroup row aria-label="rOv" name="rOv" value={values.rOv} onChange={handlechange('rOv')}>
@@ -120,6 +115,7 @@ export class WorkLifeform extends Component {
                             <FormControlLabel value="10" control={<Radio />} label="excellent" />
                         </RadioGroup>
                         </FormControl><br/><br/><br/><br/>
+
                         <Button 
                             variant="outlined" 
                             color="primary" 
