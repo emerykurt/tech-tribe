@@ -41,7 +41,7 @@ export class Confirm extends Component {
     }
 
     render() {
-        const {values: {rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rOv, rFName, rLName, rLinked, rBootcamp, rCity, rState}, name:{rCompName}} = this.props
+        const {values: {rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rOv, rFName, rLName, rLinked, rBootcamp, rCity, rState, rCompName}} = this.props
         return (
             <ThemeProvider theme={theme}>
                 <Paper variant="outlined" square elevation={3} 

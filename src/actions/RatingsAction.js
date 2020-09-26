@@ -24,7 +24,7 @@ export const addRating = rating => {
       // debugger
       if (typeof rating.error == "undefined"){
         alert(`Thank you ${rating.data.attributes.rFName} for contributing to our site! You are now apart of our Tech TRIBE!`)
-        dispatch({ type:"ADD_RATING", payload: rating })
+        dispatch({ type:"ADD_RATING", payload: rating.data })
               
       } else if (typeof rating.error == "string") {
         alert(rating.error) 

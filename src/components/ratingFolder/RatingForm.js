@@ -112,8 +112,7 @@ export class RatingForm extends React.Component {
         // debugger
         const {step} = this.state
         const {rCompName, rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState, rLinked, company_id} = this.state
-        const values = {rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState, rLinked, company_id}
-        const name = {rCompName}
+        const values = {rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rCultCom, rOv, rFName, rLName, rBootcamp, rCity, rState, rLinked, company_id, rCompName}
         
         switch(step){
             case 1:
@@ -161,8 +160,7 @@ export class RatingForm extends React.Component {
                         interview={this.interview}
                         work={this.work}
                         user={this.user}
-                        values={values}
-                        name={name}/>
+                        values={values}/>
                 )
             default:
         }

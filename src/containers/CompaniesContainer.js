@@ -37,7 +37,7 @@ class Companies extends React.Component {
     renderCompanies(){
         // debugger
         if (this.state !== null ){
-            const companies = this.props.companies.filter((company) => company.attributes.name.toLowerCase().includes(this.state.search))
+            const companies = this.props.companies.filter((company) => company.attributes.name.toLowerCase().includes(this.state.search.toLowerCase()))
 
             return(
                 companies.map(company => {
