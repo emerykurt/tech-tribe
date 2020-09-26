@@ -7,44 +7,50 @@ import Typography from '@material-ui/core/Typography'
 
 
 class RatingsContainer extends React.Component {
+    state ={
+        checkedD: false,
+        checkedM: false,
+    }
 
     componentDidMount(){
         this.props.fetchRatings()
     }
 
     renderRating(){
-        return(
-            this.props.ratings.map(rating => {
-            return (
-                <Rating key={rating.id}
-                rTitle = {rating.attributes.rTitle}
-                rInt = {rating.attributes.rInt} 
-                rIntCom = {rating.attributes.rIntCom} 
-                rTech = {rating.attributes.rTech}
-                rTechCom = {rating.attributes.rTechCom}
-                rLang = {rating.attributes.rLang}
-                rCompen = {rating.attributes.rCompen}
-                rBenef = {rating.attributes.rBenef}
-                rDivers = {rating.attributes.rDivers}
-                rMentor = {rating.attributes.rMentor}
-                rCult = {rating.attributes.rCult}
-                rOv = {rating.attributes.rOv}
-                rFName = {rating.attributes.rFName}
-                rLName = {rating.attributes.rLName}
-                rLinked = {rating.attributes.rLinked}
-                rBootCamp = {rating.attributes.rBootcamp}
-                rCity = {rating.attributes.rCity}
-                rState = {rating.attributes.rState}
-                rCompId = {rating.attributes.company_id}
-                rComp = {rating.attributes.company.data.attributes.name}
-                rLogo = {rating.attributes.company.data.attributes.logo}
-                />) 
-            })
+        // debugger
+            return(
+                this.props.ratings.map(rating => {
+                return (
+                    <Rating key={rating.id}
+                    rTitle = {rating.attributes.rTitle}
+                    rInt = {rating.attributes.rInt} 
+                    rIntCom = {rating.attributes.rIntCom} 
+                    rTech = {rating.attributes.rTech}
+                    rTechCom = {rating.attributes.rTechCom}
+                    rLang = {rating.attributes.rLang}
+                    rCompen = {rating.attributes.rCompen}
+                    rBenef = {rating.attributes.rBenef}
+                    rDivers = {rating.attributes.rDivers}
+                    rMentor = {rating.attributes.rMentor}
+                    rCult = {rating.attributes.rCult}
+                    rOv = {rating.attributes.rOv}
+                    rFName = {rating.attributes.rFName}
+                    rLName = {rating.attributes.rLName}
+                    rLinked = {rating.attributes.rLinked}
+                    rBootCamp = {rating.attributes.rBootcamp}
+                    rCity = {rating.attributes.rCity}
+                    rState = {rating.attributes.rState}
+                    rCompId = {rating.attributes.company_id}
+                    rComp = {rating.attributes.company.data.attributes.name}
+                    rLogo = {rating.attributes.company.data.attributes.logo}
+                    />) 
+                })
+            )
         
-        )
     }
 
     render(){
+        // debugger
         return(
             <div>
             <br/><br/>
@@ -67,7 +73,9 @@ class RatingsContainer extends React.Component {
     }
 }
 const mapStateToProps = state => {
-    return{ ratings: state.ratings}
+    return{ 
+        ratings: state.ratings,
+    }
 }
 
 export default connect(mapStateToProps, {fetchRatings})(RatingsContainer)

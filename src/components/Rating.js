@@ -46,8 +46,8 @@ function Rating(props){
     }
 
     return (
-      <Grid item xs={4}>
-        <Card style={{ background: "#eaeaea"}} className={classes.root}>
+      <Grid item xs={5} >
+        <Card style={{ background: "linear-gradient(to bottom, #b3b39a 0%, #999966 100%)"}} className={classes.root}>
           <CardHeader
             avatar={
               <Avatar 
@@ -93,17 +93,17 @@ function Rating(props){
                 Mentorship: <strong>{props.rMentor}</strong><br/>
               </Typography><br/><br/><br/>
               <Typography variant="h6">Interview Process:</Typography><br/><br/>
-              <Typography variant="body2" color="textSecondary" component="p">
+              <Typography variant="inherit" color="textSecondary" >
                 <details>
                     <summary>Interview Process: {props.rInt}</summary>
-                    <p>{props.rIntCom}</p>
+                    <span>{props.rIntCom}</span>
                 </details>
                 <details>
                     <summary>Technical Interview Process: {props.rTech}</summary>
-                    <p>{props.rTechCom}</p>
+                    <span>{props.rTechCom}</span>
                 </details>
               </Typography>
-              <Typography>
+              <Typography variant="inherit">
                     <blockquote>
                         - {props.rFName} {props.rLName}, {props.rBootCamp}<br/>
                         {props.rCity}, {props.rState} 

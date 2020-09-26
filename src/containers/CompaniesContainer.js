@@ -3,7 +3,6 @@ import Company from '../components/Company'
 import {connect} from 'react-redux'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import {fetchCompanies} from '../actions/CompaniesAction'
-import SearchContainer from './SearchContainer'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
@@ -36,7 +35,7 @@ class Companies extends React.Component {
       
 
     renderCompanies(){
-        debugger
+        // debugger
         if (this.state !== null ){
             const companies = this.props.companies.filter((company) => company.attributes.name.toLowerCase().includes(this.state.search))
 
@@ -79,9 +78,10 @@ class Companies extends React.Component {
                 Company Community!
             </Typography><br/>
             <TextField 
+                style={{ background: "rgb(141,155,106, 0.50)"}}
                 align='center'
                 label='Company Search'
-                variant='outlined'
+                variant='filled'
                 margin='normal'
                 id="search-companies"
                 onChange={this.search}

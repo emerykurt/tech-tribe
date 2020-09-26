@@ -9,6 +9,7 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container'
 
 const theme = createMuiTheme()
 
@@ -34,6 +35,7 @@ export class CompanyForm extends React.Component{
                 <br/><br/><br/><br/><br/>
                     <Paper variant="outlined" square elevation={3} >
                     <br/><br/><br/>
+                    <Container maxWidth="sm">
                         <Typography variant="h3" >
                         Add Your Company
                         </Typography><br/><br/><br/>
@@ -69,6 +71,7 @@ export class CompanyForm extends React.Component{
                         <Button variant="contained" color="secondary"
                         onClick={() => { this.props.addCompany(this.state) }}>Submit</Button>
                         </Link><br/>
+                    </Container>
                     </Paper>
                 </React.Fragment>
             </ThemeProvider>

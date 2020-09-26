@@ -8,6 +8,7 @@ import {createStore, compose, applyMiddleware} from 'redux'
 import { reducer as searchReducer, reduxSearch } from 'redux-search'
 import rootReducer from './reducers'
 import thunk from 'redux-thunk'
+import Container from '@material-ui/core/Container'
 
 const enhancer = compose(
   applyMiddleware(thunk),
@@ -27,7 +28,9 @@ const store = createStore(
 ReactDOM.render(
   
     <Provider store={store}>
+      <Container style={{ background: "#ffffff"}} maxWidth="md">
       <App />
+      </Container>
     </Provider>
   ,
   document.getElementById('root')

@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
 import MenuItem from '@material-ui/core/MenuItem'
+import Container from '@material-ui/core/Container'
 
 const theme = createMuiTheme()
 
@@ -39,19 +40,20 @@ export class InterviewForm extends Component {
         const {values, handlechange} = this.props
         return (
             <ThemeProvider theme={theme}>
-                <React.Fragment>
-                <br/><br/><br/><br/><br/>
-                    <Nav interview={this.interview} work={this.work} user={this.user} review={this.review}/>
                     <Paper variant="outlined" square elevation={3} 
-                     >
+                     style={{ background: "linear-gradient(to bottom, #b3b39a 0%, #999966 100%)"}}><br/><br/>
+                    <Nav interview={this.interview} work={this.work} user={this.user} review={this.review}/>
                     <br/><br/><br/>
-                        <Typography  variant="h3">
+                    <Container maxWidth="sm" >
+                        <Typography
+                        justify="center"
+                        align="center"  
+                        variant="h3">
                         Interview Process
                         </Typography>
                         <br/><br/><br/>
                         <InputLabel >Job Title:</InputLabel>
                         <TextField id="rTitle" 
-                        
                         label="details..." 
                         variant="outlined" 
                         onChange={handlechange('rTitle')}
@@ -99,13 +101,13 @@ export class InterviewForm extends Component {
                             variant="contained" 
                             color="primary" 
                             onClick={this.continue}>Continue</Button>
-                        <br/>
+                        <br/><br/>
                         <Button 
                         variant="outlined" 
                         color="secondary"
                         onClick={this.confirm}>Review</Button>
+                    </Container>
                     </Paper>
-                </React.Fragment>
             </ThemeProvider>
         )
     }

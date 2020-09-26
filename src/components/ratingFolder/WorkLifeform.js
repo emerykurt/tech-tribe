@@ -14,6 +14,7 @@ import RadioGroup from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
 import MenuItem from '@material-ui/core/MenuItem'
+import Container from '@material-ui/core/Container'
 
 const theme = createMuiTheme()
 
@@ -52,11 +53,11 @@ export class WorkLifeform extends Component {
         const {values, handlechange} = this.props
         return (
             <ThemeProvider theme={theme}>
-                <React.Fragment>
-                <br/><br/><br/><br/><br/>
+                <Paper variant="outlined" square elevation={3} 
+                     style={{ background: "linear-gradient(to bottom, #b3b39a 0%, #999966 100%)"}}><br/><br/>
                     <Nav interview={this.interview} work={this.work} user={this.user} review={this.review}/>
-                    <Paper variant="outlined" square elevation={3} >
                     <br/><br/><br/>
+                    <Container maxWidth="sm">
                         <Typography variant="h3" >
                         Work Life
                         </Typography>
@@ -129,8 +130,8 @@ export class WorkLifeform extends Component {
                         variant="outlined"
                         color="secondary" 
                         onClick={this.confirm}>Review</Button>
+                    </Container>
                     </Paper>
-                </React.Fragment>
             </ThemeProvider>
         )
     }

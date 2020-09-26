@@ -21,7 +21,7 @@ function Nav () {
     };
     
     return (
-        <AppBar id="anchor" style={{ background: "#525c55"}}  >
+        <AppBar id="anchor" style={{ background: "#b3b39a"}}  >
           <div>
             <Button style={{ background: "#eaeaea"}} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                 Menu

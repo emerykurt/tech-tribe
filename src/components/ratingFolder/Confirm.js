@@ -11,7 +11,9 @@ import ThemeProvider from '@material-ui/styles/ThemeProvider'
 import createMuiTheme from '@material-ui/core/styles/createMuiStrictModeTheme'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import Container from '@material-ui/core/Container'
+import Paper from '@material-ui/core/Paper'
 
 
 const theme = createMuiTheme()
@@ -42,9 +44,11 @@ export class Confirm extends Component {
         const {values: {rTechCom, rInt, rIntCom, rTech, rTitle, rLang, rCompen, rBenef, rDivers, rMentor, rCult, rOv, rFName, rLName, rLinked, rBootcamp, rCity, rState}, name:{rCompName}} = this.props
         return (
             <ThemeProvider theme={theme}>
-                <React.Fragment>
-                <br/><br/><br/><br/><br/>
-                <Nav interview={this.interview} work={this.work} user={this.user} review={this.review}/><br/><br/><br/>
+                <Paper variant="outlined" square elevation={3} 
+                     style={{ background: "linear-gradient(to bottom, #b3b39a 0%, #999966 100%)"}}><br/><br/>
+                    <Nav interview={this.interview} work={this.work} user={this.user} review={this.review}/>
+                    <br/><br/><br/>
+                <Container maxWidth="sm">
                     <Typography variant="h3" >
                     Review:
                     </Typography>
@@ -187,9 +191,10 @@ export class Confirm extends Component {
                         onClick={() => {
                             this.props.addRating(this.props.values) 
                             }}>Confirm</Button>
+                            
                     </Link><br/>
-                    
-                </React.Fragment>
+                </Container>
+                </Paper>
             </ThemeProvider>
         )
     }
