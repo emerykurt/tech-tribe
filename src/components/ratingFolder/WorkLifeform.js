@@ -30,7 +30,7 @@ export class WorkLifeform extends Component {
         this.props.prevStep()
     }
 
-    confirm = e => {
+    confirm = (e) => {
         e.preventDefault()
         this.props.reviewWork()
     }

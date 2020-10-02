@@ -13,6 +13,7 @@ import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Grid from '@material-ui/core/Grid'
+import Like from './Like'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -83,6 +84,7 @@ function Rating(props){
               aria-label="show more">
               <ExpandMoreIcon />
             </IconButton>
+            <Like/>
           </CardActions>
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent >
