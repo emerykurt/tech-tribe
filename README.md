@@ -38,7 +38,7 @@ import { reducer as searchReducer, reduxSearch } from 'redux-search'
 import rootReducer from './reducers'
 import thunk from 'redux-thunk'
 ```
-<br/>
+
 ```
 const enhancer = compose(
   applyMiddleware(thunk),
@@ -52,13 +52,13 @@ const enhancer = compose(
   })
 )
 ```
-<br/>
+
 ```
 const store = createStore(
   rootReducer, 
   enhancer)
 ```
-<br/>
+
 ```
 ReactDOM.render(
   
